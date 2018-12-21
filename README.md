@@ -9,8 +9,11 @@ sacral slope, pelvic radius and grade of spondylolisthesis. The following conven
 used for the class labels: DH (Disk Hernia), Spondylolisthesis (SL), Normal (NO) and
 Abnormal (AB). In this exercise, we only focus on a binary classification task NO=0
 and AB=1.
+
 (a) Download the Vertebral Column Data Set from: https://archive.ics.uci.
 edu/ml/datasets/Vertebral+Column.
+
+
 (b) Pre-Processing and Exploratory data analysis:
 i. Make scatterplots of the independent variables in the dataset. Use color to
 show Classes 0 and 1.
@@ -18,6 +21,8 @@ ii. Make boxplots for each of the independent variables. Use color to show
 Classes 0 and 1 (see ISLR p. 129).
 iii. Select the first 70 rows of Class 0 and the first 140 rows of Class 1 as the
 training set and the rest of the data as the test set.
+
+
 (c) Classification using KNN on Vertebral Column Data Set
 i. Write code for k-nearest neighbors with Euclidean metric (or use a software
 package).
@@ -42,9 +47,7 @@ We will learn in the lectures what these mean, for now research how they are com
 them.
 2
 For extra practice, you are welcome to choose smaller increments of N .
-1Homework 1
-INF 552, Instructor: Mohammad Reza Rajati
-Due: Sept 12, 2018
+
 (d) Replace the Euclidean metric with the following metrics 3 and test them. Sum-
 marize the test errors (i.e., when k = k ∗ ) in a table. Use all of your training data
 and select the best k when {1, 6, 11, . . . , 196}.
@@ -53,7 +56,9 @@ A. which becomes Manhattan Distance with p = 1.
 B. with log 10 (p) ∈ {0.1, 0.2, 0.3, . . . , 1}. In this case, use the k ∗ you found
 for the Manhattan distance in 1(d)iA. What is the best log 10 (p)?
 C. which becomes Chebyshev Distance with p → ∞
-ii. Mahalanobis Distance. 4
+ii. Mahalanobis Distance.
+
+
 (e) The majority polling decision can be replaced by weighted decision, in which the
 weight of each point in voting is proportional to its distance from the query/test
 data point. In this case, closer neighbors of a query point will have a greater
@@ -61,11 +66,3 @@ influence than neighbors which are further away. Use weighted voting with Eu-
 clidean, Manhattan, and Chebyshev distances and report the best test errors when
 k ∈ {1, 6, 11, 16, . . . , 196}.
 (f) What is the lowest training error rate you achieved in this exercise?
-3
-You can use sklearn.neighbors.DistanceMetric. Research what each distance means.
-Mahalanobis Distance requires inverting the covariance matrix of the data. When the covariance matrix
-is singular or ill-conditioned, the data live in a linear subspace of the feature space. In this case, the features
-have to be transformed into a reduced feature set in the linear subspace, which is equivalent to using a
-pseudoinverse instead of an inverse.
-4
-2
